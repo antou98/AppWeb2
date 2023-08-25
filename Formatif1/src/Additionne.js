@@ -7,10 +7,12 @@ class Additionne extends Component {
         this.state = {
             number : 0,
         };
+        this.AddTen = this.AddTen.bind(this);
+        this.AddTwenty = this.AddTwenty.bind(this);
       }
 
-
-    AddTen = () => {
+      //marche aussi///
+    /*AddTen = () => {
         this.setState((prevState) => ({
           number: prevState.number + 10,
         }));
@@ -20,7 +22,22 @@ class Additionne extends Component {
         this.setState((prevState) => ({
           number: prevState.number + 20,
         }));
+      };*/
+      /////////////
+
+      AddTen(){
+        this.setState((prevState) => ({
+          number: prevState.number + 10,
+        }));
       };
+    
+      AddTwenty(){
+        this.setState((prevState) => ({
+          number: prevState.number + 20,
+        }));
+      };
+
+      
 
     render() {
         return ( 

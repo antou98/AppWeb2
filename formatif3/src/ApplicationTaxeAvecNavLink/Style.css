@@ -1,0 +1,19 @@
+#styleDiv{
+    background-color: #333333;
+}
+
+#enfantCal{
+    background-color: #009996;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center;
+
+}
+#parentCal{
+    width: fit-content;
+    border : solid 1px black;
+    margin-left: 40px;
+  }

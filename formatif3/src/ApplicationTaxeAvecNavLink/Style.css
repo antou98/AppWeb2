@@ -17,3 +17,17 @@
     border : solid 1px black;
     margin-left: 40px;
   }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: 50px;
+    margin-top: 50px;
+
+  }
+  
+  td, th {
+    /* You can add additional styling for table cells if needed */
+    border: 1px solid #ccc; /* Optional: Add a border to cells for better visibility */
+    padding: 10px; /* Optional: Add padding to cells for spacing */
+  }

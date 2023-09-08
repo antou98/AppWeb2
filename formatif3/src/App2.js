@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Home from "./ApplicationTaxeAvecNavLink/Home";
 import About from "./ApplicationTaxeAvecNavLink/About";
 import TaxeClass from "./ApplicationTaxeAvecNavLink/TaxeClass.jsx";
+import TicTacToe from "./ApplicationTaxeAvecNavLink/FuckTonTicTacToe";
 
 function App2(){
         return(<div>
@@ -31,11 +32,18 @@ function App2(){
                             Contact
                         </NavLink>
                     </div>
+                    <div style={{ margin: '10px' }}>
+                        <NavLink to="/TicTacToe" style={({ isActive }) => ({ 
+                            color: isActive ? 'black' : 'white',backgroundColor : isActive ? 'white':'gray',padding:"5px"  })}>
+                            TicTacToe
+                        </NavLink>
+                    </div>
                 </div>
                 <Routes>
                     <Route exact path="/" element={<Home />} />
                     <Route exact path="/about" element={<About />} />
                     <Route exact path="/contact" element={<TaxeClass />} />
+                    <Route exact path="/TicTacToe" element={<TicTacToe />}/>
                 </Routes>
             </BrowserRouter>
         </div>);

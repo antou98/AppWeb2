@@ -1,0 +1,40 @@
+////import pour hooks
+import React, { useState, useEffect } from "react";
+
+const FibonacciWebWorker = () =>{
+	/////hooks
+    let [number, setNumber] = useState(0);
+    let [answer, setAnswer] = useState(0);
+    let [temps,setTemps] = useState(0);
+    
+    let changeNumber = ()=>{
+
+        let changeNum = document.getElementById("inputNumber").value;
+        setNumber(changeNum)
+        console.log(changeNum);
+    }
+    
+    let callWorker = () =>{
+        if(number!==undefined && number!==0){
+            webWorker.postMessage(number)
+        }
+    
+        webWorker.onmessage = (dataReceived)=>{
+            const { data, temps } = dataReceived.data;
+            setAnswer(data);
+            setTemps(temps)
+            console.log("data : "+dataReceived.data.data);
+            console.log("temps : "+dataReceived.data.temps);
+        }
+    }
+
+        return( <div>
+           <h1>Calculateur de Fibonacci</h1>
+               <input id="inputNumber" type="number" placeholder="nombre" onChange={changeNumber}></input>
+               <button onClick={callWorker}>calculate</button>
+               <p>Fibonacci({number}) = {answer} </p>
+               <p>Temps = {temps} </p>
+        </div>);
+        
+}
+export default FibonacciWebWorker;

@@ -1,0 +1,10 @@
+install latest node js : npm install npm@latest -g
+
+create node app : npx create-react-app 
+
+start project app : npm start
+
+ex fichier : calcul.js
+delete dependency from file  : npm uninstall calcul
+
+delete node module  : npm uninstall node_modules

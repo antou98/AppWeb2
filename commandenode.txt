@@ -1,0 +1,6 @@
+creer node server : npm install --save express
+
+npm install -g nodemon (ne fonctionne pas au cégep)
+
+npx nodemon server.js (pas au cegep)
+

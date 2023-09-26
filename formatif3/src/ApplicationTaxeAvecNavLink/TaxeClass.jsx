@@ -24,7 +24,6 @@ class TaxeClass extends Component{
         //init calculatrice 
         this.calculatrice = new Calculatrice();
     }
-
     calcule(){
         const montantEntre = this.state.montant + (this.state.montantTPS) + (this.state.montantTVQ);
 

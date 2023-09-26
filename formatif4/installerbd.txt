@@ -1,0 +1,3 @@
+install : npm install mysql
+
+lancer connexion : node connexion.js

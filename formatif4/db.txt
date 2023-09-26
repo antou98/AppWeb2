@@ -1,0 +1,27 @@
+Service URI
+mysql://CLICK_TO:REVEAL_PASSWORD@mysql-1ae6b180-antou98-d35e.aivencloud.com:20509/defaultdb?ssl-mode=REQUIRED
+
+Database Name
+defaultdb
+
+Host
+mysql-1ae6b180-antou98-d35e.aivencloud.com
+
+Port
+20509
+
+User
+avnadmin
+
+Password
+AVNS_bEHYz9ilE-mdt57XyrY
+
+
+SSLmode
+REQUIRED
+
+CA Certificate
+Show
+
+
+user-formatif	:    AVNS_HOMMmMbEe4mV3SMTm_n

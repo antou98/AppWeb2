@@ -1,0 +1,5 @@
+1: Regarder si le port est entrain d'écouter commande : netstat -ano | findstr :3000 (windows)
+exemple de retour : TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       15420
+                    TCP    [::]:3000              [::]:0                 LISTENING       15420
+
+2: Pour fermer le processus taskkill /F /PID 15420

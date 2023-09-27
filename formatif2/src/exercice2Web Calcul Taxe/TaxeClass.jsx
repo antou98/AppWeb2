@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import Calculatrice from "./Calculatrice";
-
+import AvionImage from "../image/avion.png";
 class TaxeClass extends React.Component{
 
     constructor(){
@@ -125,7 +125,10 @@ class TaxeClass extends React.Component{
         //console.log(years);
 
         return (
-            <div style={{marginLeft:"40px",border:"solid black 1px",width:"50%"}}>
+            <div style={{backgroundColor:"#0F281F"}}>
+                <img src={AvionImage} id="imageAvion"></img>
+                <h1 style={{textAlign:"center",color:"white",marginTop:"0px"}}>Calcul des taxes</h1>
+                <div id="formDiv">
                 <h2>Choisissez l'année du calcul : </h2>
                 <select value={this.state.annee} onChange={this.handleYearChange}>
                 {years.map((date, index) => (
@@ -146,6 +149,9 @@ class TaxeClass extends React.Component{
                 <input type="text" readOnly value={this.state.montantTotal}></input>
                 <br></br>
                 <br></br>
+                </div>
+                <p style={{color:"white",textAlign:"center"}}>cegep limoilou - 2023</p>
+                <div style={{height:"20px"}}></div>
             </div>
         );
     }

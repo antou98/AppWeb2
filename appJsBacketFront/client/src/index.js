@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CalculeBase from './Calcule';
-import Resultat from './Resultat';
-import TaxeClass  from './exercice2Web Calcul Taxe/TaxeClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TaxeClass />
+    <App />
   </React.StrictMode>
 );
 

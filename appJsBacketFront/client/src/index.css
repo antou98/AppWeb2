@@ -11,18 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-#formDiv{
-  border: 1px solid black;
-  text-align: center;
-  width: 40%;
-  margin: auto;
-  background-color: #48C7FF;
-}
-
-#imageAvion{
-  position: absolute;
-  top: 20px;
-  left : 15px;
-}

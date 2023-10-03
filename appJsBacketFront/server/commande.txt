@@ -1,4 +1,4 @@
-back end :
+npmback end :
 1 : npm init -y
 changer main dans package.json pour nom du script server ex : server.js
 
@@ -18,3 +18,5 @@ dans  package.json  "dev":"nodemon server" on dit que la commande dev est egal Ã
     "start":"node server",
   -> "dev":"nodemon server"
   },
+
+install express : npm install express

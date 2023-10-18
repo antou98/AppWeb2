@@ -1,6 +1,6 @@
 npmback end :
-1 : npm init -y
-changer main dans package.json pour nom du script server ex : server.js
+1 : npm init -y (pour générer un package.json)
+changer main dans package.json pour nom du script server ex : server.js ( "main": "server.js",)
 
 2 : npm i express
 3 : npm i nodemon -D

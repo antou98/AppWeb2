@@ -1,0 +1,22 @@
+npmback end :
+1 : npm init -y (pour générer un package.json)
+changer main dans package.json pour nom du script server ex : server.js ( "main": "server.js",)
+
+2 : npm i express
+3 : npm i nodemon -D
+dans package.json remplacer scripts par = "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server",
+    "dev":"nodemon server"
+  },
+
+4 run commande : npm run dev
+
+dans  package.json  "dev":"nodemon server" on dit que la commande dev est egal à la commande node server
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server",
+  -> "dev":"nodemon server"
+  },
+
+install express : npm install express

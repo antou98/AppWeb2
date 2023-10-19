@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import ConvertisseurParent from './Convertisseur/ConvertisseurParent';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 import EventDisplay from './Events/EventDisplay';
@@ -8,7 +9,7 @@ import EventDisplay from './Events/EventDisplay';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <EventDisplay />
+    <ConvertisseurParent />
   </React.StrictMode>
 );
 

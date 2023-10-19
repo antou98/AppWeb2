@@ -254,10 +254,35 @@ app.post('/adduser', function (req, res) {
  })
 
 
+ //returns all in data.json
+ app.get("/arr",(req,res)=>{
+    const path = "./"+"data.json";
+    fs.readFile(path,'utf-8',(err,data)=>{
+        if(err){
+            res.send("Internal server error : "+err).end();
+        }
+        else{
+            res.send(JSON.parse(data)).end();
+        }
+
+    })
+    
+ })
+
+
+
+
 
 var server = app.listen(5000,()=>{
     var host = server.address().address
     var port = server.address().port
    console.log("server ecoute http://%s:%s", host, port)
 })
+
+/* 
+
+res.send() peut envoyer :  string res.send("message") , objet json res.send({some:"value"}), array json res.send([{some:"value"}])
+
+
+*/
 

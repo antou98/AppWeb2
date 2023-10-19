@@ -1,0 +1,9 @@
+front-end : 
+1 : npx  create-react-app .
+
+interessant! avec cette extension vscode : ES7+ React/Redux/React-Native snippets
+creer base function composante react commande : rfce
+creer base class composante react commande : rcc
+
+2 : ajouter dans package.json (front end ) après version le url du server node.js : "proxy":"http://localhost:5000"
+

@@ -30,7 +30,7 @@ class EventDisplay extends Component {
             fetch("/api3", requestOptions)
                 .then((res) => {
                     //envoi le data en texte au prochain then
-                  return res.text(); 
+                  return res.text();
                 })
                 .then((data) => {
                  // on insere le data ici
@@ -63,7 +63,7 @@ class EventDisplay extends Component {
                     }
                 }
             }
-            //map l'acien event
+            //map l'ancien event
             else{
                 return event;
             }

@@ -1,0 +1,11 @@
+{
+    "event1" : {
+       "title" : "Semaine de lecture",
+       "date" : "2023-10-09"
+    },
+    
+    "event2" : {
+       "title" : "Noel",
+       "password" : "2023-12-25"
+    }
+ }

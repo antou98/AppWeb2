@@ -83,6 +83,39 @@ app.post("/api1",(req,res)=>{
     })
 });
 
+//ajout event et sauvegarder dans le fichier data.json
+app.post('/ajoutQuick',(req,res)=>{
+    const path ="./" + "data.json";
+    fs.readFile(path,'utf-8',(err,data)=>{
+        if(err){
+            res.send("Erreur : "+ err).end();
+        }
+
+        if(req.body.title!=null&&req.body.date!=null){
+            console.log(data)
+
+            let eventArray = JSON.parse(data)
+
+            let title = "event"+(eventArray.length+1)
+
+            eventArray.push({[title]:{"title": req.body.title,"date": req.body.date}})
+
+            fs.writeFile(path,JSON.stringify(eventArray),"utf-8",(err)=>{
+                if(err){
+                    res.send("Event not created").end();
+                }
+                else{
+                    res.send("Event created").end();
+                }
+        
+            })
+        }
+        else{
+            res.send("Event not created").end();
+        }
+        
+    })
+})
 
 //lit le data dans data.json et le retourne l'évenement qui est passé par res
 app.post("/api2",(req,res)=>{
@@ -150,16 +183,106 @@ app.post("/api4",(req,res)=>{
                 console.log("data sauvegarder");
                 res.send("data sauvegarder").end();
             }
+    }) 
+})
+
+//retourne l'event selon le id event passé en param 
+//url postman = http://localhost:5000/events/eventid (ex : http://localhost:5000/events/event1) (req.params.id)
+app.get('/events/:id',(req,res)=>{
+    const path = "./"+"data.json";
+    fs.readFile(path,'utf-8',(err,data)=>{
+        if(err){
+            console.log("Erreur : "+err);
+            res.send("Erreur : "+err).end();
+        }
+        let eventsArray = JSON.parse(data);
+        let retEvent = null;
+
+      
+        for(let event of eventsArray){
+            //console.log(event)
+            console.log(req.params.id)
+            if(event.hasOwnProperty(req.params.id)) {
+                    retEvent = event;
+            }
+        }
+
+        if(retEvent!=null){
+            res.json(retEvent).end();
+        }else{
+            res.send("Not an eventid").end();
+        }
+
+    })
+})
+
+
+/*var user = {
+    "user4" : {
+       "name" : "marc",
+       "password" : "password4",
+       "profession" : "teacher",
+       "id": 4
+    }
+ }*/ 
+
+//ajoute user à UserObjects object json avec json objects (degueu)
+app.post('/adduser', function (req, res) {
+    console.log("add user")
+    // First read existing users.
+    fs.readFile( __dirname + "/" + "UserObjects.json", 'utf8', function (err, data) {
+        
+       dataNew = JSON.parse( data );
+       console.log( data );
+       const newUserId = "user"+ (Object.keys(dataNew).length + 1);
+       //console.log(req.body.user)
+       //console.log(newUserId)
+       dataNew[newUserId] = req.body.user;
+       console.log( dataNew );
+
+       fs.writeFile(__dirname + "/" + "UserObjects.json",JSON.stringify(dataNew),'utf8',(err)=>{
+        if(err){
+            console.log("error lors de l'écriture"+err)
+            res.send("error lors de l'écriture").end();
+        }
+        else{
+            console.log("data sauvegarder");
+            res.send("data sauvegarder").end();
+        }
+       })
+    });
+ })
+
+
+ //returns all in data.json
+ app.get("/arr",(req,res)=>{
+    const path = "./"+"data.json";
+    fs.readFile(path,'utf-8',(err,data)=>{
+        if(err){
+            res.send("Internal server error : "+err).end();
+        }
+        else{
+            res.send(JSON.parse(data)).end();
+        }
+
     })
     
+ })
 
-    
 
-})
+
+
 
 var server = app.listen(5000,()=>{
     var host = server.address().address
     var port = server.address().port
    console.log("server ecoute http://%s:%s", host, port)
 })
+
+/* 
+
+res.send() peut envoyer :  string res.send("message") , objet json res.send({some:"value"}), array json res.send([{some:"value"}])
+
+
+*/
 

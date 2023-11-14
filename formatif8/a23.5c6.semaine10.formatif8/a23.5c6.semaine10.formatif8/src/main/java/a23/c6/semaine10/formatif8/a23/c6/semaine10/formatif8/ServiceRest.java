@@ -31,6 +31,17 @@ public class ServiceRest {
         }
     }
 
+    @GetMapping(value = "/personnes")
+    public Personne[] getPersonnes(){
+
+        Personne[] personnes = new Personne[gestionnairePersonnes.personnes.size()];
+        for(int i = 0;i<gestionnairePersonnes.personnes.size();i++){
+            personnes[i] = getPersonne(i);
+        }
+
+        return personnes;
+    }
+
     @PostMapping(value = "/personne")
     public ResponseEntity<String> creerPersonne(@RequestBody Personne personne){
         gestionnairePersonnes.personnes.add(personne);

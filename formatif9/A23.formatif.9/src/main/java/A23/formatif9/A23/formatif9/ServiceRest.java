@@ -1,7 +1,6 @@
-package a23.c6.semaine10.formatif8.a23.c6.semaine10.formatif8;
+package A23.formatif9.A23.formatif9;
 
-import a23.c6.semaine10.formatif8.a23.c6.semaine10.formatif8.Personne.GestionnairePersonnes;
-import a23.c6.semaine10.formatif8.a23.c6.semaine10.formatif8.Personne.Personne;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,10 +47,12 @@ public class ServiceRest {
         return new ResponseEntity<>("Personne ajouté !! ", HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value="/personne/")
-    public void removePersonne(@RequestBody int id){
+    @DeleteMapping(value="/personne/{id}")
+    public ResponseEntity<String> removePersonne(@PathVariable int id){
         gestionnairePersonnes.personnes.remove(id);
         System.out.println("nombre de personne :"+ gestionnairePersonnes.personnes.size());
+        return  new ResponseEntity<>("Personne éffacé !!",HttpStatus.ACCEPTED);
+
 
     }
 

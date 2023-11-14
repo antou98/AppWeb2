@@ -1,4 +1,4 @@
-package a23.c6.semaine10.formatif8.a23.c6.semaine10.formatif8.Personne;
+package A23.formatif9.A23.formatif9;
 
 import java.util.List;
 

@@ -1,0 +1,10 @@
+https://evpvcenter.cegeplimoilou.lan
+https://MSDNAA.cegeplimoilou.lan
+
+admin password = fofo123!5
+
+reponses sécurité : d
+
+rdp (remote connection)
+CLIM\Administrator
+admin password = fofo123!5

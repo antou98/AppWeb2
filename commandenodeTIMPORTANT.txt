@@ -20,3 +20,15 @@ dans  package.json  "dev":"nodemon server" on dit que la commande dev est egal Ã
   },
 
 install express : npm install express
+
+//pour mysql
+npm i mysql
+
+//pour library d'encryption 
+npm i bcrypt
+
+//pour nodemon
+npm i nodemon
+
+//express-session
+npm i express-session
